@@ -59,5 +59,15 @@ The analysis of LGBTQ participants indicates a significant protective effect of 
 
 ## Druggies
 
+```{r}
+druggies <- FinalData %>% filter(DrugUser == "yes")
+nrow(druggies)
+druggies_test <- prop.test(sum(druggies$infected == 1), nrow(druggies), p = 0.5)
+druggies_test
+```
+
+The proportion test for participants who use drugs is also statistically significant, indicating that the vaccine effectively reduces infection rates within this group. This finding is especially meaningful given the elevated health risks often faced by drug users and further supports the vaccine’s efficacy across diverse populations.
 
 # Overall Results and Conclusions
+
+
