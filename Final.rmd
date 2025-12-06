@@ -48,7 +48,14 @@ The proportion test for females indicates that the observed infection rate is si
 
 ## LGBTQ
 
+```{r}
+lgbtq <- FinalData %>% filter(LGBTQ == "gay")
+nrow(lgbtq)
+lgbtq_test <- prop.test(sum(lgbtq$infected == 1), nrow(lgbtq), p = 0.5)
+lgbtq_test
+```
 
+The analysis of LGBTQ participants indicates a significant protective effect of the vaccine, evidenced by a p-value well below 0.05. These results show that vaccination substantially reduces infection risk within this group, supporting the vaccine’s effectiveness across diverse sexual orientations.
 
 ## Druggies
 
