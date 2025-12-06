@@ -37,6 +37,14 @@ The results for males were also highly significant, meaning the vaccine clearly 
 
 ## Females
 
+```{r}
+females <- FinalData %>% filter(sex == "F")
+nrow(females)
+female_test <- prop.test(sum(females$infected == 1), nrow(females), p = 0.5)
+female_test
+```
+
+The proportion test for females indicates that the observed infection rate is significantly lower than 50%. The extremely small p-value provides strong evidence that the vaccine offers a protective effect for female participants, reducing infection risk beyond what would be expected by chance.
 
 ## LGBTQ
 
